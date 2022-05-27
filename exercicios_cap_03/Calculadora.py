@@ -13,13 +13,13 @@ def coletarValores(op):
     valor2 = int(input("\nDigite o segundoo valor: "))
     nomeOp = ""
 
-    if op == 1:
+    if op == "1":
         nomeOp = "+"
         result = valor1 + valor2
-    elif op == 2:
+    elif op == "2":
         nomeOp = "-"
         result = valor1 - valor2
-    elif op == 3:
+    elif op == "3":
         nomeOp = "x"
         result = valor1 * valor2
     else:
@@ -28,8 +28,8 @@ def coletarValores(op):
         
     print(f"\n {valor1} {nomeOp} {valor2} = {result}")
     
-    ret = int(input("\nDigite 1 para realizar ou qualquer outro valor para finalizar: "))
-    if ret == 1:
+    ret = input("\nDigite 1 para realizar outra operação ou qualquer outro valor para finalizar: ")
+    if ret == "1":
             print("\n---------------------------------------------------------\n")
             operacao()
     else:
@@ -38,13 +38,13 @@ def coletarValores(op):
         
 # Função onde recebe o sinal da operação
 def operacao():
-    op = int(input("\nDigite a opção (1/2/3/4): "))
+    op = input("\nDigite a opção (1/2/3/4): ")
     
-    if op > 0 and op <5:
+    if (op == "1") or (op =="2") or (op =="3") or (op =="4"):
         coletarValores(op)
     else:
-        op = int(input("\nOpção invalida, digite outro valor inválido para finalizar, ou escolha uma opção válida (1/2/3/4): "))
-        if op > 0 and op <5:
+        op = input("\nOpção invalida, digite outro valor inválido para finalizar, ou escolha uma opção válida (1/2/3/4): ")
+        if (op == "1") or (op =="2") or (op =="3") or (op =="4"):
             coletarValores(op)
         else:
             print("\nCalculadora encerrada!")
